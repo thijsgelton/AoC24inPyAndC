@@ -59,6 +59,26 @@ int main()
         {
             count++;
         }
+        else
+        {
+            for (int i = 0; i < size; i++)
+            {
+                int modified_levels[MAX_NUMBERS];
+                int modified_size = 0;
+                for (int j = 0; j < size; j++)
+                {
+                    if (j != i)
+                    {
+                        modified_levels[modified_size++] = levels[j];
+                    }
+                }
+                if (is_safe(modified_levels, modified_size))
+                {
+                    count++;
+                    break;
+                }
+            }
+        }
     }
     fclose(file);
 
